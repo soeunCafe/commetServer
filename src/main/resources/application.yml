@@ -1,0 +1,42 @@
+
+
+
+
+# ?? ??
+server:
+  port: 9004
+
+# spring ??
+spring:
+  devtools:
+    livereload:
+      enabled: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  application:
+    name: boardCUDService
+
+# Eureka ??
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+# config ??
+# mybatis:
+#  config-location: classpath:config/myBatis.xml
+
+
+jpa:
+  open-in-view: true
+  hibernate:
+    ddl-auto: create
+    naming:
+      physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    use-new-id-generator-mappings: false
+  show-sql: true
+  properties:
+    hibernate.format_sql: true
