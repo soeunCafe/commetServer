@@ -15,7 +15,7 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
   application:
-    name: boardCUDService
+    name: boardService
 
 # Eureka ??
 eureka:
