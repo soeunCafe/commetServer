@@ -1,4 +1,4 @@
-package com.soeun.board.config;
+package com.soeun.comment.config;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.http.HttpStatus;

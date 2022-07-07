@@ -5,4 +5,4 @@ spring:
     config:
       uri: http://localhost:7070
       name: config
-      profile: board
+      profile: comment

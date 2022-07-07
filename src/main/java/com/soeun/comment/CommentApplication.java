@@ -1,13 +1,13 @@
-package com.soeun.board;
+package com.soeun.comment;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BoardApplication {
+public class CommentApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BoardApplication.class, args);
+		SpringApplication.run(CommentApplication.class, args);
 	}
 
 }

@@ -4,9 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
-        <package name="com.soeun.board.model"/>
+        <package name="com.soeun.comment.model"/>
     </typeAliases>
     <mappers>
-        <mapper resource="mapper/boardMapper.xml"></mapper>
+        <mapper resource="mapper/commentMapper.xml"></mapper>
     </mappers>
 </configuration>

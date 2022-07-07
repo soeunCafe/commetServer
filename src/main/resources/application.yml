@@ -4,7 +4,7 @@
 
 # ?? ??
 server:
-  port: 0
+  port: 9003
 
 # spring ??
 spring:
@@ -15,7 +15,7 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
   application:
-    name: boardRService
+    name: commentService
 
 # Eureka ??
 eureka:
