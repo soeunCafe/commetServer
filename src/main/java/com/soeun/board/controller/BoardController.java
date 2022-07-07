@@ -1,45 +1,49 @@
 package com.soeun.board.controller;
 
+import com.soeun.board.config.SecurityService;
 import com.soeun.board.model.BoardDto;
 import com.soeun.board.service.BoardService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
 
 @RestController
 @RequestMapping("/board")
 public class BoardController {
 
-
     @Autowired
     private BoardService boardService;
 
-    // 게시글 수정하기
-    @PutMapping("/{Id}")
-    public BoardDto updateBoard(@PathVariable Integer Id, @RequestBody BoardDto boardDto) {
+    @Autowired
+    SecurityService securityService;
+
+    @Autowired
+    BoardDto boardDto;
 
 
-        return boardService.updateBoard(Id, boardDto);
-    }
-
-    // 게시글 추가하기
-    @PostMapping
-    public BoardDto saveCategory(@RequestBody BoardDto boardDto) {
-        return boardService.saveBoard(boardDto);
-    }
-
-    // 게시글 삭제하기
-    @DeleteMapping("/{Id}")
-    @ResponseStatus(HttpStatus.OK)
-    public void deleteCategory(@PathVariable Integer Id) {
-        boardService.deleteBoard(Id);
-    }
+    //    전체 게시물 조회
     @GetMapping
-    public String fsffs(@PathVariable Integer Id) {
-        return  "test";
+    public List<BoardDto> selectCategory() {
+
+        return boardService.selectBoard();
     }
+
+    // 게시판 조회
+    @GetMapping("/{cafeid}/{categoryid}")
+    public BoardDto getBoard(@PathVariable Integer cafeid, @PathVariable Integer categoryid) {
+        // 토큰에서 아이디 가져오기
+        boardDto.setUserid(securityService.getIdAtToken());
+        //boardrDto.setUsername(securityService.getIdAtToken());
+        //boardrDto.setUserimg(securityService.getIdAtToken());
+        return boardService.getBoard(cafeid,categoryid);
+    }
+
+    // 게시물 조회
+    @GetMapping("/{cafeid}/{categoryid}/{Id}")
+    public BoardDto getBoard2(@PathVariable Integer cafeid, @PathVariable Integer categoryid, @PathVariable Integer Id){
+        boardDto.setUserid(securityService.getIdAtToken());
+        return boardService.getBoard2(cafeid,categoryid,Id);
+    }
+
 }

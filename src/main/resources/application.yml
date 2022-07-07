@@ -4,7 +4,7 @@
 
 # ?? ??
 server:
-  port: 9004
+  port: 0
 
 # spring ??
 spring:
@@ -15,7 +15,7 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
   application:
-    name: boardService
+    name: boardRService
 
 # Eureka ??
 eureka:
@@ -40,3 +40,8 @@ jpa:
   show-sql: true
   properties:
     hibernate.format_sql: true
+
+jwt:
+  secret_key: sdjfhaskdjfhawecalskdjfaoweiclasdkjcfsldkcmaslkdfjlaskdjfaoiecmasldkjfaosifnasldkjfalsdkjfas
+  #  expTime: 86400000
+  expTime: 30000
